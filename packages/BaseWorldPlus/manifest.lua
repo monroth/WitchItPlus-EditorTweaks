@@ -1,0 +1,1 @@
+return {id='BaseWorldPlus',version='3.1.0',name='Editor tweaks',description='Teleporters, scenery hiding and ship editing.',api_version=2,protocol_version=2,required_on_all_players=true,enabled=true,dependencies={Core='>=2.1.0 <3.0.0',UIKit='>=2.0.0 <3.0.0'}}

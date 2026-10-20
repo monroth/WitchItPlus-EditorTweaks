@@ -1,0 +1,13 @@
+{
+  "package_versions": {
+    "BaseWorldPlus": "3.1.0"
+  },
+  "release_zip": {
+    "bytes": 79161,
+    "name": "editor-tweaks-3.1.0.zip",
+    "sha256": "5129dd2bf1e26e74efdb87e77bb9f5fc1135c585198fb59b99fe00d4fe7c1960"
+  },
+  "repository": "monroth/WitchItPlus-EditorTweaks",
+  "source_commit": "c58a810d239cafc115c82646d7f153ad5bf94076",
+  "updater_production_ready": false
+}
