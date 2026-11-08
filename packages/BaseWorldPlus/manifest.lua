@@ -1,2 +1,2 @@
-return {id='BaseWorldPlus',version='0.4.1',name='Editor tweaks',
+return {id='BaseWorldPlus',version='0.4.2',name='Editor tweaks',
     enabled=true}

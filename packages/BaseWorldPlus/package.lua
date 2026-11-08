@@ -287,16 +287,13 @@ return function(R,C,U)
         end
         replace(info,data);state.path=path
     end)
+    -- The host's edits wait for the session: until the host's mode arrives a guest's session
+    -- counts as vanilla, and the host sends its topics in no fixed order.
     local function client_world()
         local c=C.session()
         if c.role~='client' then return end
-        if c.mode=='vanilla' then
-            host_value=nil
-            clear()
-            return
-        end
         local value=host_value
-        if not value then clear();return end
+        if c.mode=='vanilla' or not value then clear();return end
         if not c.world or world_id(c.world)~=value.data.world then return end
         if state and state.data==value.data then return end
         replace({world=c.world,layout_id=value.layout,host=false,is_playtest=c.is_playtest},value.data,value.views)
@@ -348,7 +345,7 @@ return function(R,C,U)
     end)
     -- Entering a vanilla session removes every edit.
     C.on_session(function(c)
-        if c.mode=='vanilla' then host_value=nil;clear() end
+        if c.mode=='vanilla' then clear() end
         client_world()
     end)
     R.on('world_end',function() state,host_value,return_data,saved=nil,nil,nil,{} end)
